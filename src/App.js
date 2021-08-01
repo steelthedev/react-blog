@@ -1,18 +1,38 @@
 
 import Navbar from './navbar';
 import Home from './home';
-
+import {BrowserRouter as Router , Route , Switch } from 'react-router-dom';
+import Create from './create';
+import BlogDetails from './blogdetails';
+import NotFound from './404';
 
 function App() {
-  const title = "Alaye mi"
-  const scores = [1,2,2,2,2,]
+  
   return (
-    <div className="App">
+    <Router>
+         <div className="App">
       <Navbar />
       <div className="content">
-        <Home />
+       <Switch>
+         <Route exact path="/">
+          <Home />
+         </Route>
+
+         <Route path="/create">
+          <Create />
+         </Route>
+
+    <Route path="/blog/:slug">
+    <BlogDetails />
+    </Route>
+    <Route path="*">
+      <NotFound />
+    </Route>
+       </Switch>
       </div>
     </div>
+    </Router>
+ 
   );
 }
 

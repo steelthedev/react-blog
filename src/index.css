@@ -32,3 +32,15 @@
   margin: 40px auto;
   padding: 20px;
 }
+
+
+
+.home .blog-single{
+  padding: 20px;
+  background-color: #f1356d;
+  color: #fff;
+}
+
+.content{
+  padding: 60px 0;
+}

@@ -1,25 +1,20 @@
 
-import { useState } from "react";
+import BlogList from "./bloglist";
+import useFetch from "./useeffect";
 
 const Home = () => {
     
-    const [name, setName] = useState('mario');
-    const [age , setAge] = useState(25);
-
-    const handleClick = (e) => {
-        setName("steel");
-        setAge(10);
-    }
-
+  const {data, isPending , error} = useFetch('http://localhost:8000/api/database/blog');
    
-
+  
     return ( 
    
         <div className="home">
-            <h2>Homepage</h2>
-            <p>{name} is {age} years old</p>
-            <button onClick={handleClick}>Click Me</button>
-            
+            {error && <div>{error }</div>}
+            {isPending && <div> Loading.. </div>}
+            {data && <BlogList blogs={data} title="This is steel"/>}
+          
+           
         </div>
      );
 }

@@ -1,8 +1,11 @@
+import { linkSync } from "fs";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
     return ( 
         <nav className=" nav navbar nav-bar navbar-light  navbar-expand-md ">
           
-           <a href=""
+           <a href="/"
            className="navbar-brand"
            >Iyanu Blog</a>
 
@@ -26,15 +29,15 @@ const Navbar = () => {
                  className="navbar-nav ml-auto  ">
                     <li
                      className="nav-item">
-                        <a href="/" 
-                        className="nav-link">Home</a>
+                        <Link to="/" 
+                        className="nav-link">Home</Link>
                     </li>
 
                     <li 
                     className="nav-item">
-                        <a href="/create" 
+                        <Link to="/create" 
                         className="nav-link"
-                        >New Blog</a>
+                        >New Blog</Link>
                     </li>
                 </ul>
             </div>
